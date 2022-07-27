@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom"
 import "./Calls.css"
 export const CallLog = ( { searchTermState }) => {
     const [calls, setCalls] = useState([])
-    const [filteredTickets, setFiltered] = useState([])
-    const [emergency, setEmergency] = useState(false)
-    const [openOnly, updateOpenOnly] = useState(false)
+    // const [filteredTickets, setFiltered] = useState([])
+    // const [emergency, setEmergency] = useState(false)
+    // const [openOnly, updateOpenOnly] = useState(false)
     const navigate = useNavigate()
 
     const localUser = localStorage.getItem("whatHappened_user")
@@ -38,50 +38,53 @@ export const CallLog = ( { searchTermState }) => {
         [] // When this array is empty, you are observing initial component state
     )
 
-    useEffect(
-        () => {
-            if (honeyUserObject.staff) {
-                setFiltered(tickets)
-            } else {
-                const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
-                setFiltered(myTickets)
-            }
-        },
-        [tickets]
-    )
+    // useEffect(
+    //     () => {
+    //         if (honeyUserObject.staff) {
+    //             setFiltered(tickets)
+    //         } else {
+    //             const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
+    //             setFiltered(myTickets)
+    //         }
+    //     },
+    //     [tickets]
+    // )
 
-    useEffect(
-        () => {
-            if (openOnly) {
-                const openTicketsArray = tickets.filter(ticket => {
-                    return ticket.userId === honeyUserObject.id && ticket.dateCompleted === ""
-                })
-                setFiltered(openTicketsArray)
-            }
-            else {
-                const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
-                setFiltered(myTickets)
-            }
-        }, 
-        [ openOnly ]
-    )
+    // useEffect(
+    //     () => {
+    //         if (openOnly) {
+    //             const openTicketsArray = tickets.filter(ticket => {
+    //                 return ticket.userId === honeyUserObject.id && ticket.dateCompleted === ""
+    //             })
+    //             setFiltered(openTicketsArray)
+    //         }
+    //         else {
+    //             const myTickets = tickets.filter(ticket => ticket.userId === honeyUserObject.id)
+    //             setFiltered(myTickets)
+    //         }
+    //     }, 
+    //     [ openOnly ]
+    // )
+    
     return <>
         {
-            honeyUserObject.staff
-            ? <>
-                <button onClick={() => { setEmergency(true) }}>Emergencies Only</button>
-                <button onClick={() => { setEmergency(false) }}>All Tickets</button>
-            </>
-            : <>
-            <button onClick={() => navigate("/ticket/create")}>Create Ticket</button>
-            <button onClick={() => updateOpenOnly(true)}>Open Ticket</button>
-            <button onClick={() => updateOpenOnly(false)}>All My Tickets</button>
-            </>
+            setCalls
+            // whatHappenedUserObject.manager
+            // ? <>
+            //     <button onClick={() => { setEmergency(true) }}>Emergencies Only</button>
+            //     <button onClick={() => { setEmergency(false) }}>All Tickets</button>
+            // </>
+            // : <>
+            // <button onClick={() => navigate("/ticket/create")}>Create Ticket</button>
+            // <button onClick={() => updateOpenOnly(true)}>Open Ticket</button>
+            // <button onClick={() => updateOpenOnly(false)}>All My Tickets</button>
+            // </>
+
         }
 
-        <h2>List of Tickets</h2>
+        <h2>My Calls</h2>
 
-        <article className="tickets">
+        {/* <article className="tickets">
             {
                 filteredTickets.map(
                     (ticket) => {
@@ -91,6 +94,6 @@ export const CallLog = ( { searchTermState }) => {
                     }
                 )
             }
-        </article>
+        </article> */}
     </>
 }
