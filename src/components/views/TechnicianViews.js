@@ -2,24 +2,24 @@ import { Outlet, Route, Routes } from "react-router-dom"
 
 
 
-import { TicketForm } from "../tickets/TicketForm"
+import { NewCallForm } from "../calls/NewCallForm"
 import { CallLog } from "../calls/CallLog"
 
 
-export const CustomerViews = () => {
+export const TechnicianViews = () => {
     return (
         <Routes>
             <Route path="/" element={
                 <>
-                    <h1>Honey Rae Repair Shop</h1>
-                    <div>Your one-stop-shop to get all your electronics fixed</div>
+                    <h1>What Happened?</h1>
+                    <div></div>
 
                     <Outlet />
                 </>
             }>
 
-                <Route path="tickets" element={< TicketList /> } />
-                {/* <Route path="ticket/create" element={<TicketForm />} /> */}
+                <Route path="tickets" element={< NewCallForm /> } />
+                <Route path="ticket/create" element={< CallLog />} />
                 
             </Route>
         </Routes>

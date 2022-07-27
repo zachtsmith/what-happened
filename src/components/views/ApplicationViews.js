@@ -4,11 +4,11 @@ import { ManagerViews } from "./ManagerViews"
 
 
 export const ApplicationViews = () => {
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localUser = localStorage.getItem("whatHappened_user")
+    const whatHappenedUserObject = JSON.parse(localUser)
 
 
-   if (honeyUserObject.staff) {
+   if (whatHappenedUserObject.manager) {
     return <ManagerViews />
    }
    else {
