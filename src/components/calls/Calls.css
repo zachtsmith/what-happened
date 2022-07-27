@@ -1,0 +1,12 @@
+.calls {
+    display: flex;
+    flex-direction: column;
+}
+
+.call {
+    background-color: rgb(255, 215, 0);
+    border: 1px dotted rgb(252, 21, 21);
+    padding: 0.7rem;
+    margin: .5rem 0;
+
+}
