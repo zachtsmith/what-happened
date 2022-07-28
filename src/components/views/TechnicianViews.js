@@ -18,9 +18,9 @@ export const TechnicianViews = () => {
                 </>
             }>
 
-                <Route path="tickets" element={< NewCallForm /> } />
-                <Route path="ticket/create" element={< CallLog />} />
-                
+                <Route path="logbook" element={< CallLog /> } />
+                {/* <Route path="/loggedCall" element={< CallLog />} />
+                 */}
             </Route>
         </Routes>
     )
