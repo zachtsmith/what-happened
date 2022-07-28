@@ -8,5 +8,9 @@
     border: 1px dotted rgb(252, 21, 21);
     padding: 0.7rem;
     margin: .5rem 0;
+    font-weight: bold;
 
+}
+.call_description {
+    font-weight: normal
 }

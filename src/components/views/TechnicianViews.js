@@ -19,8 +19,8 @@ export const TechnicianViews = () => {
             }>
 
                 <Route path="logbook" element={< CallLog /> } />
-                {/* <Route path="/loggedCall" element={< CallLog />} />
-                 */}
+                <Route path="newcall" element={< NewCallForm />} />
+                
             </Route>
         </Routes>
     )
