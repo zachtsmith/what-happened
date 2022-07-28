@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export const NewCallForm = () => {
@@ -7,14 +7,15 @@ export const NewCallForm = () => {
         initial state object
     */
     const [newCall, updateCallList] = useState({
-            zoneId: newCall.zoneId,
-            equipmentId: newCall.equipmentId,
-            issueDetailsId: newCall.issueDetailsId,
-            date: newCall.date,
-            startTime: newCall.startTime,
-            endTime: newCall.endTime,
-            totalAmountOfDowntime: newCall.totalAmountOfDowntime,
+            zoneId: "",
+            equipmentId: "",
+            issueDetailsId: "",
+            date: "",
+            startTime: "",
+            endTime: "",
+            totalAmountOfDowntime: "" 
     })
+    const [calls, setCalls] = useState([])
     /*
         TODO: Use the useNavigation() hook so you can redirect
         the user to the ticket list
@@ -23,6 +24,14 @@ export const NewCallForm = () => {
     const localUser = localStorage.getItem("whatHappened_user")
     const whatHappenedUserObject = JSON.parse(localUser)
 
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088`)
+                .then(response => response.json()).then((callLogArray) => { setCalls(callLogArray) })
+
+        },
+        [] // When this array is empty, you are observing initial component state
+    )
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
@@ -60,19 +69,22 @@ export const NewCallForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Zone</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Zone"
-                        value={newCall.zoneId}
+                    <select class="calls" id="calls">
+                    <option value="">Choose</option>
+                        ${calls.map(
+                             call => {
+                                return `<option value="${call.zones.zoneNumber}">${call.zones.zoneNumber}</option>`
+                                }
+                          ).join("")
+            }
+                     </select>
                         onChange={ 
                             (evt) => {
                                 const copy = {...newCall}
                                 copy.description = evt.target.value
                                 updateCallList(copy)
                             }
-                            } />
+                            } 
                 </div>
             </fieldset>
             {/* <fieldset>
