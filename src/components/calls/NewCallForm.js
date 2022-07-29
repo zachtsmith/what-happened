@@ -2,18 +2,16 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export const NewCallForm = () => {
-    /*
-        TODO: Add the correct default properties to the
-        initial state object
-    */
     const [newCall, updateCallList] = useState({
-            zoneId: "",
-            equipmentId: "",
-            issueDetailsId: "",
-            date: "",
-            startTime: "",
-            endTime: "",
-            totalAmountOfDowntime: "" 
+        zoneId: null,
+        equipmentId: null,
+        issueDetailsId: null,
+        date: null,
+        startTime: null,
+        endTime: null,
+        totalAmountOfDowntime: null,
+        descriptionOfIssue: null,
+        RepairMade: null
     })
     const [calls, setCalls] = useState([])
     /*
@@ -26,7 +24,7 @@ export const NewCallForm = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088`)
+            fetch(`http://localhost:8088/zones`)
                 .then(response => response.json()).then((callLogArray) => { setCalls(callLogArray) })
 
         },
@@ -53,56 +51,38 @@ export const NewCallForm = () => {
         return fetch(`http://localhost:8088/loggedCalls`, {
             method: "POST",
             headers: {
-                "content-Type" : "application/json"
+                "content-Type": "application/json"
             },
             body: JSON.stringify(callToSendToAPI)
         })
-        .then(response => response.json())
-        .then(() => {
-            navigate("/")
-        })
+            .then(response => response.json())
+            .then(() => {
+                navigate("/")
+            })
     }
 
     return (
         <form className="newCallForm">
             <h2 className="newCallForm__title">New Call</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Zone</label>
-                    <select class="calls" id="calls">
-                    <option value="">Choose</option>
-                        ${calls.map(
-                             call => {
-                                return `<option value="${call.zones.zoneNumber}">${call.zones.zoneNumber}</option>`
-                                }
-                          ).join("")
-            }
-                     </select>
-                        onChange={ 
-                            (evt) => {
-                                const copy = {...newCall}
-                                copy.description = evt.target.value
-                                updateCallList(copy)
-                            }
-                            } 
-                </div>
-            </fieldset>
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">Emergency:</label>
-                    <input type="checkbox"
-                        value={ticket.emergency}
-                        onChange={
-                            (evt) => {
-                                const copy = {...ticket}
-                                copy.emergency = evt.target.checked
-                                update(copy)
-                            }} />
-                </div>
-            </fieldset> */}
-            <button 
-            onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-            className="btn btn-primary">
+
+            <div className="form-group">
+                <label htmlFor="description">Zone</label>
+                <select className="calls" id="calls" >
+                    {calls.map(
+                        (call) => (<option value={newCall.zoneId}
+                            onChange={
+                                (evt) => {
+                         updateCallList(evt.target.value)
+                                }}
+                        >{call?.zoneNumber}</option>
+                        ))}
+
+                </select>
+            </div>
+
+            <button
+                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                className="btn btn-primary">
                 Submit to Logbook
             </button>
         </form>
