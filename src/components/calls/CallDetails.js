@@ -18,9 +18,19 @@ export const CallDetails = () => {
     )
     return <section className="callDetail" >
     <header className="callDetail_header">{callInsight.zoneId}</header>
-    {/* <div>Email: {employee?.user?.email}</div>
-    <div>Specialty: {employee.specialty}</div>
-    <div>Pay Rate: {employee.rate}</div>
-    <footer className="employee_footer">Currently working on {employee?.employeeTickets?.length} tickets.</footer> */}
+    <div>Zone: {}</div>
+    <div>Equipment: {employee.specialty}</div>
+    <div>Problem: {employee.rate}</div>
+    <footer className="employee_footer">Currently working on {employee?.employeeTickets?.length} tickets.</footer>
 </section>
 }
+
+// zoneId: 0,
+//         equipmentId: 0,
+//         issueDetailsId: 0,
+//         date: "",
+//         startTime: "",
+//         endTime: "",
+//         totalAmountOfDowntime: 0,
+//         descriptionOfIssue: "",
+//         RepairMade: ""

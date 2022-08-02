@@ -1,4 +1,4 @@
-.calls {
+.callLog {
     display: flex;
     flex-direction: column;
 }
@@ -13,4 +13,8 @@
 }
 .call_description {
     font-weight: normal
+}
+.todaysCalls {
+    display: flex;
+    flex-direction: column;
 }
