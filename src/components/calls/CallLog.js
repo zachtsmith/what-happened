@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { Call } from "./Call"
+
 import "./Calls.css"
 
 export const CallLog = () => {
@@ -19,15 +22,14 @@ export const CallLog = () => {
 
     return <>
         <h2> My Calls </h2>
-        <article className="calls">
+        <article className="call">
             {
-                calls.map((call) => {
-                    return <section className="call" key={call.id}> <header>Zone {call.equipment.zoneId} {call.equipment.equipmentType} {call.equipment.equipmentTypeNumber}</header> <li className="call_description"> {call.descriptionOfIssue} </li>
-                    </section>
-                }
+                calls.map((call) => <Call key={`call==${call.id}`} id={call.id} callInfo={call}/>
                 )
 
             }</article>
     </>
 
 }
+
+// equipmentZoneId={call.equipment.zoneId} equipmentType={call.equipment.equipmentType} equipmentTypeNumber={call.equipment.equipmentTypeNumber} issue={call.descriptionOfIssue}
