@@ -8,13 +8,13 @@ export const TechNav = () => {
         <ul className="navbar">
             <li className="navbar__item active">
                 {/* <Link className="navbar__link" to="/home">Home</Link> */}
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/newcall">Submit New Call</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/logbook">My Logbook</Link>
+                <Link className="navbar__link" to="/logbook">Company Logbook</Link>
             </li>
             
             {
