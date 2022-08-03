@@ -6,6 +6,7 @@ import { NewCallForm } from "../calls/NewCallForm"
 import { CallLog } from "../calls/CallLog"
 import { Call } from "../calls/Call"
 import { TodaysCalls } from "../calls/TodaysCalls"
+import { CallDetails } from "../calls/CallDetails"
 
 
 export const TechnicianViews = () => {
@@ -23,7 +24,7 @@ export const TechnicianViews = () => {
                 {/* <Route path="home" element={< TodaysCalls /> } /> */}
                 <Route path="logbook" element={< CallLog /> } />
                 <Route path="newcall" element={< NewCallForm />} />
-                <Route path="call/:callId" element={< Call />}/>
+                <Route path="call/:callId" element={< CallDetails />}/>
                 
             </Route>
         </Routes>
