@@ -15,13 +15,13 @@ export const TechnicianViews = () => {
             <Route path="/" element={
                 <>
                     <h1>What Happened?</h1>
-
+                    < MyCalls />
                     <Outlet />
                 </>
             }>
 
 
-                <Route path="/home" element={< MyCalls />} />
+                <Route path="home" element={< MyCalls />} />
                 <Route path="logbook" element={< CallLog />} />
                 <Route path="newcall" element={< NewCallForm />} />
                 <Route path="call/:callId" element={< CallDetails />} />
