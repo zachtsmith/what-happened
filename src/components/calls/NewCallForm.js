@@ -83,7 +83,7 @@ export const NewCallForm = () => {
         })
             .then(response => response.json())
             .then(() => {
-                navigate("/")
+                navigate("/home")
             })
     }
 
