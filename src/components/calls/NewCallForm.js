@@ -83,7 +83,7 @@ export const NewCallForm = () => {
         })
             .then(response => response.json())
             .then(() => {
-                navigate("/")
+                navigate("/home")
             })
     }
 
@@ -164,7 +164,8 @@ export const NewCallForm = () => {
                         type="date"
                         className="form-control"
                         placeholder="Date"
-                        value={newCall.date}
+                        
+                        value={newCall?.date}
                         onChange={
                             (evt) => {
                                 const copy = { ...newCall }

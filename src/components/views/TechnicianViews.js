@@ -15,7 +15,7 @@ export const TechnicianViews = () => {
             <Route path="/" element={
                 <>
                     <h1>What Happened?</h1>
-                    < MyCalls />
+                    {/* < MyCalls /> */}
                     <Outlet />
                 </>
             }>
