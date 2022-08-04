@@ -7,7 +7,7 @@ import "./Calls.css"
 export const CallDetails = () => {
     const { callId } = useParams()
     const [callInsight, updateCallInsight] = useState({})
-    const [callEquipment, update] = useState({})
+    const [callEquipment, update] = useState([])
 
     const localUser = localStorage.getItem("whatHappened_user")
     const whatHappenedUserObject = JSON.parse(localUser)
@@ -37,12 +37,11 @@ export const CallDetails = () => {
         },
         []
     )
-// console.log(callInsight)
-// console.log(callEquipment)
-    const displayedEquipment = () => {
-        if (callInsight.equipmentId === callEquipment.id) {return <div>Equipment: {callEquipment.equipmentType}</div>}
-        else {return ""}
-    }
+
+    // const displayedEquipment = () => { callEquipment.find(equipment => 
+    //     {return equipment.id === callInsight.equipmentId})}
+    
+    // function will render the delete button on the insidividual calls if the logged in user submitted that call.
     const deleteCall = () => {
         if (whatHappenedUserObject.id === callInsight.userId) {
             return <button onClick={() => {
@@ -62,14 +61,14 @@ export const CallDetails = () => {
     return <section className="callDetail" >
         <header className="callDetail_header">Call #{callInsight.id}</header>
         <div>Zone: {callInsight.zoneId}</div>
-        {displayedEquipment()}
+        {/* {displayedEquipment()} */}
         <div>Date: {callInsight.date}</div>
         <div>Start Time: {callInsight.startTime}</div>
         <div>End Time: {callInsight.endTime}</div>
         <div>Total Downtime: {callInsight.totalAmountOfDowntime}</div>
         <div>What Happened? {callInsight.descriptionOfIssue}</div>
         <div>Repair Made? {callInsight.repairMade}</div>
-        {deleteCall()}
+        <div>{deleteCall()}</div>
 
     </section>
 }
