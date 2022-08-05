@@ -7,15 +7,16 @@ import { CallLog } from "../calls/CallLog"
 import { Call } from "../calls/Call"
 import { MyCalls } from "../calls/MyCalls"
 import { CallDetails } from "../calls/CallDetails"
-
+import "./Views.css"
 
 export const TechnicianViews = () => {
-    return (
+    return ( 
+
         <Routes>
             <Route path="/" element={
                 <>
-                    <h1>What Happened?</h1>
-                    {/* < MyCalls /> */}
+                    <h1 className="what-happened">What Happened?</h1>
+                
                     <Outlet />
                 </>
             }>
@@ -28,5 +29,6 @@ export const TechnicianViews = () => {
 
             </Route>
         </Routes>
+                
     )
 }

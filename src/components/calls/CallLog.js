@@ -26,7 +26,7 @@ export const CallLog = () => {
         <h2> Company Logbook </h2>
         <article className="callLog">
          {
-                calls.map((call) => <Call key={`call==${call.id}`} id={call.id} equipmentZoneId={call.equipment.zoneId} equipmentType={call.equipment.equipmentType} equipmentTypeNumber={call.equipment.equipmentTypeNumber} date={call.date} issue={call.descriptionOfIssue}/>
+                calls.map((call) => <Call key={`call==${call.id}`} id={call.id} userId={call.userId} equipmentZoneId={call.equipment.zoneId} equipmentType={call.equipment.equipmentType} equipmentTypeNumber={call.equipment.equipmentTypeNumber} date={call.date} issue={call.descriptionOfIssue} downtime={call.totalAmountOfDowntime}/>
                  )
 
             }</article>

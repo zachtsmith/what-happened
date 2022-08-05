@@ -50,7 +50,7 @@ fieldset {
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
+    /* background-color: hsla(0,0%,100%,0.40); */
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }
@@ -58,5 +58,59 @@ fieldset {
 .button--close {
     position: relative;
     bottom: -2rem;
+       font-size: large;
+}
+.email-label{
+    color: orange;
+    font-size: 30px;
+    font-family: monospace;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
 }
 
+.button-signIn{
+    background-color: orange;
+    color: white;
+    font-size: larger;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    
+}
+
+.btn-register{
+    background-color: orange;
+    color: white;
+    font-size: larger;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
+     
+    
+}
+.register-label{
+    color: orange;
+    font-size: 25px;
+    font-family: monospace;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
+    margin:0;
+    padding:0
+}
+
+.button-needToRegister{
+    background-color: orange;
+    color: white;
+    font-size: x-large;
+    text-shadow: -1px 1px 2px #000,
+    1px 1px 2px #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    
+}

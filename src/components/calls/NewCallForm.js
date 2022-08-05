@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import "./Calls.css"
 
 export const NewCallForm = () => {
     const [newCall, updateCallList] = useState([{
@@ -91,9 +91,9 @@ export const NewCallForm = () => {
         <form className="newCallForm">
             <h2 className="newCallForm__title">New Call</h2>
 {/* Display Zone */}
-            <fieldset>
+           <h3> <fieldset>
                 <div className="form-group">
-                    <label htmlFor="zone">Zone </label>
+                    <label htmlFor="zone" className="form-label">Zone </label>
                     <select onChange={
                         (evt) => {
                             const copy = { ...newCall }
@@ -114,7 +114,7 @@ export const NewCallForm = () => {
             {/* Display Equipment */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="equipment">Equipment Detail </label>
+                    <label htmlFor="equipment" className="form-label">Equipment Detail </label>
                     <select onChange={
                         (evt) => {
                             const copy = { ...newCall }
@@ -138,7 +138,7 @@ export const NewCallForm = () => {
             {/* Display Issue */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="issues">Issue Type and Root Cause</label>
+                    <label htmlFor="issues" className="form-label">Issue Type and Root Cause</label>
                     <select onChange={
                         (evt) => {
                             const copy = { ...newCall }
@@ -158,7 +158,7 @@ export const NewCallForm = () => {
             {/* Display Date */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="date">Date:</label>
+                    <label htmlFor="date" className="form-label">Date:</label>
                     <input
                         required autoFocus
                         type="date"
@@ -178,9 +178,9 @@ export const NewCallForm = () => {
             {/* Display StartTime */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="startTime">Start Time:</label>
+                    <label htmlFor="startTime" className="form-label">Start Time:</label>
                     <input
-                        required autoFocus
+                        
                         type="time"
                         className="form-control"
                         placeholder="Start Time of Repair"
@@ -197,9 +197,9 @@ export const NewCallForm = () => {
             {/* Display EndTime */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="endTime">End Time:</label>
+                    <label htmlFor="endTime" className="form-label">End Time:</label>
                     <input
-                        required autoFocus
+                        
                         type="time"
                         className="form-control"
                         placeholder="End Time of Repair"
@@ -216,9 +216,9 @@ export const NewCallForm = () => {
              {/* Display Total Downtime */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="totalTime">Total Downtime</label>
+                    <label htmlFor="totalTime" className="form-label">Total Downtime</label>
                     <input
-                        required autoFocus
+                        
                         type="text"
                         className="form-control"
                         placeholder="(minutes)"
@@ -235,9 +235,9 @@ export const NewCallForm = () => {
             {/* Display Issue Entry Form */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="whatHappened">What Happened?</label>
+                    <label htmlFor="whatHappened" className="form-label">What Happened?</label>
                     <input
-                        required autoFocus
+                        
                         type="form"
                         className="form-control"
                         placeholder=""
@@ -254,9 +254,9 @@ export const NewCallForm = () => {
              {/* Display Repair Description */}
              <fieldset>
                 <div className="form-group">
-                    <label htmlFor="repair">What did you do to fix it?</label>
+                    <label htmlFor="repair" className="form-label">Repair Made?</label>
                     <input
-                        required autoFocus
+                        
                         type="form"
                         className="form-control"
                         placeholder=""
@@ -275,6 +275,7 @@ export const NewCallForm = () => {
                 className="btn btn-primary">
                 Submit to Logbook
             </button>
+            </h3>
         </form>
     )
 }

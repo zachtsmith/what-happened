@@ -1,14 +1,16 @@
 .callLog {
     display: flex;
-    flex-direction: column;
+    flex-direction:column-reverse;
+    font-size: large;
 }
 
 .call {
-    background-color: rgb(255, 215, 0);
-    border: 1px dotted rgb(252, 21, 21);
+    background-color:  lightblue;
+    border: 5px solid  white;
     padding: 0.7rem;
     margin: .5rem 0;
     font-weight: bold;
+    font-size: larger;
 
 }
 .call_description {
@@ -22,14 +24,41 @@
 .callDetail{
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 215, 0);
-    border: 1px dotted rgb(252, 21, 21);
+    background-color:  lightblue;
+    border: 5px solid  white;
     padding: 0.7rem;
     margin: .5rem 0;
     font-weight: bold;
+    font-size: larger;
 }
 
 .deleteCall{
     margin-left: auto;
-    background-color: lightblue;
+    background-color: orange;
+    font-size: large;
+}
+
+.call_link{
+    color: black;
+}
+
+.form-group{
+    color: white;
+    text-shadow: -1px 1px 2px #000,
+      1px 1px 2px #000,
+      1px -1px 0 #000,
+      -1px -1px 0 #000;
+      font-size:larger
+    
+}
+
+.btn{
+    color: white;
+    margin-left: auto;
+    background-color: orange;
+    font-size:x-large;
+}
+
+.downtime{
+    color: orange
 }
