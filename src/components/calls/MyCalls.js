@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, Navigate } from "react-router-dom"
 import { Call } from "./Call"
-import { CallDetails } from "./CallDetails"
-import { useNavigate } from "react-router-dom"
-
 import "./Calls.css"
 
 export const MyCalls = () => {
@@ -11,7 +7,7 @@ export const MyCalls = () => {
     
     const localUser = localStorage.getItem("whatHappened_user")
     const whatHappenedUserObject = JSON.parse(localUser)
-    const navigate = useNavigate()
+    
 
     useEffect(
         () => {
@@ -31,7 +27,7 @@ export const MyCalls = () => {
                 <Call key={index} id={call.id} equipmentZoneId={call.equipment.zoneId} equipmentType={call.equipment.equipmentType} equipmentTypeNumber={call.equipment.equipmentTypeNumber} date={call.date} issue={call.descriptionOfIssue}/></>}
 
                 else { 
-                    navigate("/home") }}
+                    return "" }}
                 
                 )
 
