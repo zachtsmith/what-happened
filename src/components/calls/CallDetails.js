@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { CallLog } from "./CallLog"
 import "./Calls.css"
 
 
 export const CallDetails = () => {
     const { callId } = useParams()
     const [callInsight, updateCallInsight] = useState({})
-    const [callEquipment, update] = useState([])
+    // const [callEquipment, update] = useState([])
 
     const localUser = localStorage.getItem("whatHappened_user")
     const whatHappenedUserObject = JSON.parse(localUser)
@@ -27,20 +26,17 @@ export const CallDetails = () => {
         [callId]
 
     )
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/equipment`)
-                .then(response => response.json())
-                .then((data) => {
-                    update(data)
-                })
-        },
-        []
-    )
+    // useEffect(
+    //     () => {
+    //         fetch(`http://localhost:8088/equipment`)
+    //             .then(response => response.json())
+    //             .then((data) => {
+    //                 update(data)
+    //             })
+    //     },
+    //     []
+    // )
 
-    // const displayedEquipment = () => { callEquipment.find(equipment => 
-    //     {return equipment.id === callInsight.equipmentId})}
-    
     // function will render the delete button on the insidividual calls if the logged in user submitted that call.
     const deleteCall = () => {
         if (whatHappenedUserObject.id === callInsight.userId) {
@@ -61,14 +57,13 @@ export const CallDetails = () => {
     return <section className="callDetail" >
         <header className="callDetail_header">Call #{callInsight.id}</header>
         <div>Zone: {callInsight.zoneId}</div>
-        {/* {displayedEquipment()} */}
         <div>Date: {callInsight.date}</div>
         <div>Start Time: {callInsight.startTime}</div>
         <div>End Time: {callInsight.endTime}</div>
         <div>Total Downtime: {callInsight.totalAmountOfDowntime}</div>
         <div>What Happened? {callInsight.descriptionOfIssue}</div>
         <div>Repair Made? {callInsight.repairMade}</div>
-        <div>{deleteCall()}</div>
+        <div className="delete_button">{deleteCall()}</div>
 
     </section>
 }

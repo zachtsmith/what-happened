@@ -1,16 +1,27 @@
 .navbar {
     display: flex;
     flex-wrap:wrap;
-    justify-content: left;
+    justify-content:space-between;
+    background-color: lightblue;
+    height: 25px; 
+    
 
 }
 
 .navbar__item {
-    flex-basis: 10%;
-    list-style-type: none;
+    flex-basis:15%;
+    list-style-type:none;
+    color: black;
 
 }
 
 .navbar__logout {
-    margin-left: auto;
+    margin-left:auto;
+}
+
+.navbar__link {
+    color: black;
+    margin: 10px;
+    font-family:monospace;
+    font-size: larger;
 }

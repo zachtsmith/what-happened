@@ -14,10 +14,9 @@ export const WhatHappened = () => {
 
 		<Route path="*" element={
 			<Authorized>
-				<>
 					<NavBar />
 					<ApplicationViews />
-				</>
+					<div className="logo_container"></div>
 			</Authorized>
 
 		} />

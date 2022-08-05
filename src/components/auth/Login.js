@@ -17,6 +17,7 @@ export const Login = () => {
                     const user = foundUsers[0]
                     localStorage.setItem("whatHappened_user", JSON.stringify({
                         id: user.id,
+                        name: user.name,
                         manager: user.isManager
                     }))
 
@@ -35,24 +36,27 @@ export const Login = () => {
                     <h1>What Happened?</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail" className="email-label"> Email address </label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Email Address"
+                            placeholder="Email"
                             required autoFocus />
+                            
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button type="submit" className="button-signIn">
                             Sign in
                         </button>
                     </fieldset>
                 </form>
             </section>
+            
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register" className="button-needToRegister">Need to Register?</Link>
             </section>
+            
         </main>
     )
 }
