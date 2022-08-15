@@ -10,7 +10,7 @@ export const NewCallForm = () => {
         date: "",
         startTime: "",
         endTime: "",
-        totalAmountOfDowntime: 0,
+        totalAmountOfDowntime: "",
         descriptionOfIssue: "",
         RepairMade: ""
     }])
@@ -110,9 +110,9 @@ export const NewCallForm = () => {
 
                     </select>
                 </div>
-            </fieldset>
+            
             {/* Display Equipment */}
-            <fieldset>
+          
                 <div className="form-group">
                     <label htmlFor="equipment" className="form-label">Equipment Detail </label>
                     <select onChange={
@@ -134,9 +134,9 @@ export const NewCallForm = () => {
 
                     </select>
                 </div>
-            </fieldset>
+             
             {/* Display Issue */}
-            <fieldset>
+            
                 <div className="form-group">
                     <label htmlFor="issues" className="form-label">Issue Type and Root Cause</label>
                     <select onChange={
@@ -154,9 +154,9 @@ export const NewCallForm = () => {
 
                     </select>
                 </div>
-            </fieldset>
+           
             {/* Display Date */}
-            <fieldset>
+            
                 <div className="form-group">
                     <label htmlFor="date" className="form-label">Date:</label>
                     <input
@@ -174,9 +174,9 @@ export const NewCallForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+            
             {/* Display StartTime */}
-            <fieldset>
+            
                 <div className="form-group">
                     <label htmlFor="startTime" className="form-label">Start Time:</label>
                     <input
@@ -193,9 +193,9 @@ export const NewCallForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+           
             {/* Display EndTime */}
-            <fieldset>
+            
                 <div className="form-group">
                     <label htmlFor="endTime" className="form-label">End Time:</label>
                     <input
@@ -212,14 +212,14 @@ export const NewCallForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+            
              {/* Display Total Downtime */}
-            <fieldset>
+            
                 <div className="form-group">
                     <label htmlFor="totalTime" className="form-label">Total Downtime</label>
                     <input
                         
-                        type="text"
+                        type="number"
                         className="form-control"
                         placeholder="(minutes)"
                         value={newCall.totalAmountOfDowntime}
@@ -231,9 +231,9 @@ export const NewCallForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+           
             {/* Display Issue Entry Form */}
-            <fieldset>
+           
                 <div className="form-group">
                     <label htmlFor="whatHappened" className="form-label">What Happened?</label>
                     <input
@@ -250,9 +250,9 @@ export const NewCallForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+            
              {/* Display Repair Description */}
-             <fieldset>
+             
                 <div className="form-group">
                     <label htmlFor="repair" className="form-label">Repair Made?</label>
                     <input
